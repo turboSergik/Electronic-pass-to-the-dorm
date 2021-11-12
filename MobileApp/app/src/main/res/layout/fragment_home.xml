@@ -11,13 +11,19 @@
             android:id="@+id/text_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:textAlignment="center"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintEnd_toEndOf="@+id/scan_qr_button"
+            app:layout_constraintStart_toStartOf="@+id/scan_qr_button"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintVertical_bias="0.247" app:layout_constraintTop_toBottomOf="@+id/scan_qr_button"/>
+    <ImageButton
+            android:src="@drawable/qr_3"
+            android:layout_width="249dp"
+            android:layout_height="246dp" android:id="@+id/scan_qr_button"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.453"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
