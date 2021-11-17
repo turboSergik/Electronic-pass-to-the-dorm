@@ -21,6 +21,18 @@ class UserDetailView(APIView):
         return Response(serializer.data)
 
 
+class UpdateUserApproveView(APIView):
+
+    def post(self, request):
+
+        user_id = request.data['id']
+        is_approved = request.data['is_approved']
+        UserRegular.objects.filter(id=user_id).update(is_approved=is_approved)
+        user = UserRegular.objects.get(id=user_id)
+        serializer = UserRegularSerializer(user)
+        return Response(serializer.data)
+
+
 class UserCreateView(APIView):
 
     def post(self, request):

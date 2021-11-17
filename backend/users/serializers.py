@@ -11,5 +11,5 @@ class UserAdminSerializer(serializers.HyperlinkedModelSerializer):
 class UserRegularSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserRegular
-        fields = ("name", "surname", "phone", "email")
+        fields = ("name", "surname", "phone", "email", "is_approved")
 
