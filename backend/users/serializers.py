@@ -5,11 +5,23 @@ from .models import UserAdmin, UserRegular
 class UserAdminSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserAdmin
-        fields = ("name", "surname", "phone", "email")
+        fields = ("login", "name", "surname", "phone", "email",)
+
+
+class UserAdminRegisterSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = UserAdmin
+        fields = ("login", "name", "surname", "phone", "email", "password")
 
 
 class UserRegularSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserRegular
-        fields = ("name", "surname", "phone", "email", "is_approved")
+        fields = ("login", "name", "surname", "phone", "email", "is_approved")
+
+
+class UserRegularRegisterSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = UserRegular
+        fields = ("login", "name", "surname", "phone", "email", "is_approved", "password")
 

@@ -5,6 +5,9 @@ from django.db import models
 
 class UserAdmin(models.Model):
 
+    login = models.CharField(max_length=20)
+    password = models.CharField(max_length=30)
+
     name = models.CharField(max_length=20)
     surname = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
@@ -15,6 +18,9 @@ class UserAdmin(models.Model):
 
 
 class UserRegular(models.Model):
+
+    login = models.CharField(max_length=20)
+    password = models.CharField(max_length=30)
 
     name = models.CharField(max_length=20)
     surname = models.CharField(max_length=20)
