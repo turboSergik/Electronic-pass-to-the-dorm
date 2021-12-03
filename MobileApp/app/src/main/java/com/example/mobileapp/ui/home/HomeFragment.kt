@@ -76,59 +76,5 @@ class HomeFragment : Fragment() {
             } else {
                 super.onActivityResult(requestCode, resultCode, data)
             }
-
     }
-
-
-//    private fun setupScanner() {
-//
-//        qrScanIntegrator = IntentIntegrator.forSupportFragment(this)
-//        qrScanIntegrator.setOrientationLocked(true)
-//    }
-//
-//    private fun setOnClickListener() {
-//        binding.scanQrButton.setOnClickListener { performAction() }
-//    }
-//
-//    private fun performAction() {
-//        // Code to perform action when button is clicked.
-//        qrScanIntegrator.initiateScan()
-//    }
-//
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-//        Toast.makeText(activity, "start scanning!", Toast.LENGTH_LONG).show()
-//        if (result != null) {
-//            // If QRCode has no data.
-//            if (result.contents == null) {
-//                Toast.makeText(activity, R.string.result_not_found, Toast.LENGTH_LONG).show()
-//            } else {
-//                // If QRCode contains data.
-//                try {
-//                    // Converting the data to json format
-//                    val obj = JSONObject(result.contents)
-//
-//                    Toast.makeText(activity, obj.toString(), Toast.LENGTH_LONG).show()
-//
-//                    // Show values in UI.
-////                    binding.name.text = obj.getString("name")
-////                    binding.siteName.text = obj.getString("site_name")
-//
-//                } catch (e: JSONException) {
-//                    e.printStackTrace()
-//
-//                    // Data not in the expected format. So, whole object as toast message.
-//                    Toast.makeText(activity, "ERROR " + result.contents, Toast.LENGTH_LONG).show()
-//                }
-//            }
-//        } else {
-//            super.onActivityResult(requestCode, resultCode, data)
-//        }
-//    }
-//
-//
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
 }

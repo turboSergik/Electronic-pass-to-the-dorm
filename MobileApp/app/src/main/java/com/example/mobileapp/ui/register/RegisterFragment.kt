@@ -33,11 +33,6 @@ class RegisterFragment : Fragment() {
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textRegister
-        registerViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-
         val button = binding.registerButton
         button.setOnClickListener { view ->
             setButtonState(view)
@@ -55,9 +50,11 @@ class RegisterFragment : Fragment() {
 
         val login: String = _binding?.fragmentRegisterLogin?.text.toString()
         val password: String = _binding?.fragmentRegisterPassword?.text.toString()
-        var roomNumber: String = _binding?.fragmentRegisterRoom?.text.toString()
+        val name: String = _binding?.fragmentRegisterName?.text.toString()
+        val surname: String = _binding?.fragmentRegisterSurname?.text.toString()
+        var phoneNumber: String = _binding?.fragmentRegisterPhone?.text.toString()
         var email: String = _binding?.fragmentRegisterEmail?.text.toString()
-        var phone: String = _binding?.fragmentRegisterPhone?.text.toString()
+        var roomNumber: String = _binding?.fragmentRegisterRoom?.text.toString()
 
         val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
         imm?.hideSoftInputFromWindow(view.windowToken, 0)
