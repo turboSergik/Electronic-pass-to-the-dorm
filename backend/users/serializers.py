@@ -17,11 +17,11 @@ class UserAdminRegisterSerializer(serializers.HyperlinkedModelSerializer):
 class UserRegularSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserRegular
-        fields = ("login", "name", "surname", "phone", "email", "is_approved")
+        fields = ("login", "name", "surname", "phone", "email", "is_approved", "number_of_room")
 
 
 class UserRegularRegisterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserRegular
-        fields = ("login", "name", "surname", "phone", "email", "is_approved", "password")
+        fields = ("login", "name", "surname", "phone", "email", "is_approved", "password", "number_of_room")
 

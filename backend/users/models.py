@@ -26,6 +26,7 @@ class UserRegular(models.Model):
     surname = models.CharField(max_length=20)
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=30)
+    number_of_room = models.CharField(max_length=30, default="")
     is_approved = models.BooleanField(default=0)
 
     def __str__(self) -> str:
