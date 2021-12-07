@@ -1,16 +1,22 @@
 package com.example.mobileapp.ui.register
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.mobileapp.R
 import com.example.mobileapp.databinding.FragmentRegisterBinding
+import com.example.mobileapp.user_login
+import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
@@ -22,11 +28,13 @@ class RegisterFragment : Fragment() {
 
     private lateinit var registerViewModel: RegisterViewModel
     private var _binding: FragmentRegisterBinding? = null
+    private lateinit var viewOfLayout: View
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -37,6 +45,12 @@ class RegisterFragment : Fragment() {
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        viewOfLayout = inflater.inflate(R.layout.nav_header_main, container, false)
+
+        val kek = viewOfLayout.findViewById(R.id.textView) as TextView
+        kek.text = "mda mda"
+        viewOfLayout.findViewById<TextView>(R.id.textView2).text = "mdamda"
 
         val button = binding.registerButton
         button.setOnClickListener { view ->
@@ -51,6 +65,7 @@ class RegisterFragment : Fragment() {
         _binding = null
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setButtonState(view: View) {
 
         val login: String = _binding?.fragmentRegisterLogin?.text.toString()
@@ -60,6 +75,18 @@ class RegisterFragment : Fragment() {
         val phoneNumber: String = _binding?.fragmentRegisterPhone?.text.toString()
         val email: String = _binding?.fragmentRegisterEmail?.text.toString()
         val roomNumber: String = _binding?.fragmentRegisterRoom?.text.toString()
+
+        if (login == "" ||
+            password == "" ||
+            name == "" ||
+            surname == "" ||
+            phoneNumber == "" ||
+            email == "" ||
+            roomNumber == ""
+                ) {
+            Toast.makeText(context, "Fill all fields!", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
         imm?.hideSoftInputFromWindow(view.windowToken, 0)
@@ -102,12 +129,16 @@ class RegisterFragment : Fragment() {
                         inputLine = it.readLine()
                     }
                     println("Response : $response")
-                    val myToast = Toast.makeText(context, "$response", Toast.LENGTH_SHORT)
-                    myToast.show()
+
+                    val answer = JSONObject("$response")
+
+                    user_login = answer.get("login").toString()
+
+                    findNavController().navigate(R.id.nav_home)
                 }
             }
             catch (e: Exception) {
-                println("MESSAGE=" + e.message)
+                Toast.makeText(context, "This login already exist", Toast.LENGTH_SHORT).show()
             }
         }
     }

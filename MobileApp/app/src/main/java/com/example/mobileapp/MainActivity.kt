@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        // findViewById<View>(R.id.nav_slideshow).visibility = View.INVISIBLE
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
@@ -58,3 +57,6 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+
+
+var user_login = ""
