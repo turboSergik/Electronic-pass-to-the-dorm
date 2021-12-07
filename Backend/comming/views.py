@@ -11,13 +11,13 @@ from users.models import UserRegular
 
 class PutInQueueView(APIView):
 
-    def get(self, request, pk):
+    def get(self, request, login):
 
-        user_item = UserRegular.objects.get(id=pk)
+        user_item = UserRegular.objects.get(login=login)
         if user_item is None:
             return Response(status=400)
 
-        Queue.objects.create(user_item_id=pk)
+        Queue.objects.create(user_item_id=user_item.id)
         return Response(status=201)
 
 
