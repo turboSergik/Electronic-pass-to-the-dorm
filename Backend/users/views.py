@@ -44,7 +44,7 @@ class UserLoginView(APIView):
             user = user[0]
 
         if not user:
-            return Response(_build_error("Invalid login or pasword"), status=404)
+            return Response(_build_error("Invalid login or pasword"), status=400)
 
         serializer = UserRegularSerializer(user)
         return Response(serializer.data)
@@ -58,7 +58,7 @@ class UserCreateView(APIView):
         if user.is_valid():
             existing = UserRegular.objects.filter(login=request.data["login"])
             if len(existing):
-                return Response(_build_error("Login is exist"), status=406)
+                return Response(_build_error("Login is exist"), status=400)
             user.save()
         else:
             return Response(_build_error("Bad request"), status=400)
@@ -109,7 +109,7 @@ class UserAdminLoginView(APIView):
         if len(user):
             user = user[0]
         if not user:
-            return Response(_build_error("Invalid login or password"), status=404)
+            return Response(_build_error("Invalid login or password"), status=400)
 
         serializer = UserRegularSerializer(user)
         return Response(serializer.data)

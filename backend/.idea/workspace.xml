@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72dc139a-bb45-4e19-a500-291de66cd929" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../MobileApp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MobileApp/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MobileApp/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MobileApp/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MobileApp/app/src/main/java/com/example/mobileapp/ui/home/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../MobileApp/app/src/main/java/com/example/mobileapp/ui/home/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MobileApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../MobileApp/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../MobileApp/app/src/main/java/com/example/mobileapp/ui/register/RegisterFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../MobileApp/app/src/main/java/com/example/mobileapp/ui/register/RegisterFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MobileApp/app/src/main/res/layout/fragment_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MobileApp/app/src/main/res/layout/fragment_register.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,7 +49,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TRPO/Decodance" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="backend" type="Python.DjangoServer" factoryName="Django server">
@@ -84,7 +87,8 @@
       <updated>1638622777148</updated>
       <workItem from="1638622786782" duration="19176000" />
       <workItem from="1638785718575" duration="39000" />
-      <workItem from="1638800200045" duration="3553000" />
+      <workItem from="1638800200045" duration="16092000" />
+      <workItem from="1638872980377" duration="71000" />
     </task>
     <servers />
   </component>
